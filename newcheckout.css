@@ -384,5 +384,9 @@ button#submit-btn {
 	.sb-checkout-payment-links a:nth-child(5) {
 		transform: scale(.8);
 	}
+
+	.sb-checkout-payment-links a:nth-child(5) {
+		transform: scale(.8);
+	}
 }
 .newclass { /*New Design */}
