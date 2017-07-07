@@ -10586,7 +10586,7 @@ body[class*="checkout-multishipping-"] #review-buttons-container {
 }
 @media only screen and (max-width: 479px) {
   body[class*="checkout-multishipping-"] .buttons-set .back-link {
-    display: block;
+    display: none;
   }
 }
 /* ============================================ *
@@ -10604,4 +10604,4 @@ div.calendar table td.button {
 /*aftab changed files*/
 
 /*changed again */
-.x{display: none}
+.x{display: block}
