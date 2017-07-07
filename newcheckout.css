@@ -393,4 +393,4 @@ button#submit-btn {
 		transform: scale(.7);
 	}
 }
-.newclass { /*New Design */}
+.newclass { display: block;}
