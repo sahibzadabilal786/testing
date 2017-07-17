@@ -1,0 +1,97 @@
+<div class="write-question-content" id="questionform"> 
+
+<div class="form-group"> 
+<div class="form-element"> 
+
+ <h4 class="ask_ques_heading"><?php echo $this->__('Ask a question'); ?></h4>
+
+<ul id="tm_yotpo_msg" class="messages">
+	<li class="error-msg" id="tm_error" style="display:none">
+	<span></span>
+	</li>
+
+	<li class="success-msg" id="tm_success" style="display:none">
+	  <span></span>
+	</li>
+</ul>
+
+<label class="y-label"><?php echo $this->__('Question'); ?>:</label> 
+
+<textarea placeholder="" maxlength="1000" name="review_content" id="review_content" class="yotpo-text-box" ></textarea>
+
+</div>
+
+
+
+<div class="user_email_wrapper" style="transition-duration: 0.2s; opacity: 1; display: inherit;"> 
+
+<div class="user_email_main_div"> 
+
+  <div class="form-element-name-input form-element-name-input1"> 
+
+  <label class="y-label"><?php echo $this->__('Use your name'); ?>:</label> 
+
+  <input placeholder="" maxlength="40" name="display_name" id="display_name" autocomplete="off" class="y-input" > 
+
+</div> 
+
+<div class="form-element-name-input form-element-name-input2" style="transition-duration: 0.2s; "> 
+
+  <label class="y-label"><?php echo $this->__('Email'); ?>:</label> 
+
+  <input placeholder="" name="email" id="email" autocomplete="off" class="y-input" > 
+
+</div> 
+
+<div class="yotpo-clr"></div> 
+
+</div> </div>
+
+<div class="post_button_div">
+
+  <a class="post_button" href="javascript:void(0)" onclick="javascript:submitquestions()" ><?php echo $this->__("POST")?></a>
+
+</div>
+
+</div> 
+
+</div>
+<script type="text/javascript">
+//<![CDATA[
+function submitquestions() {
+
+ jQuery.ajax({
+           type: "POST",
+           url: '<?php echo Mage::getUrl('yotporeviews/index/submitquestion');?>',
+           data: {'review_content':jQuery('#review_content').val(),'display_name':jQuery('#display_name').val(),'email':jQuery('#email').val(),'product_id':'<?php echo $this->getProduct()->getId(); ?>'},
+           success: function(data)
+           {
+           	  
+           	   var object = JSON.parse(data);
+           	   if(object.error !=null){
+                jQuery('#tm_yotpo_msg').show();
+           	   	jQuery("#tm_error").show();
+           	   	jQuery('#tm_yotpo_msg li#tm_error span').html(object.error);
+           	   	jQuery("#tm_success").hide();
+
+           	   }
+           	   else if(object.success!=null){
+                jQuery('#tm_yotpo_msg').show();
+           	   	jQuery("#tm_success").show();
+           	   	jQuery("#tm_error").hide();
+           	   	jQuery('#tm_yotpo_msg li#tm_success span').html(object.success);
+           	   }
+           	   else if(object.failed!=null){
+                jQuery('#tm_yotpo_msg').show();
+           	   	jQuery("#tm_error").show();
+           	   	jQuery('#tm_yotpo_msg li#tm_error span').html(object.failed);
+           	   	jQuery("#tm_success").hide();
+           	   }
+           	   
+               
+           }
+         });
+	}
+		
+//]]> 
+</script>
