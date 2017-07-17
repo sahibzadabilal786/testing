@@ -1,0 +1,57 @@
+.add_to_cart_form{
+	margin-top: 15px;
+}
+.add_to_cart_form button{ 
+text-align: center;
+border-radius: 5px;
+line-height: 35px;
+padding: 0;
+border: none;
+width: 100%;
+font-size: 0.8em;
+}
+.free_cut_sample {
+    color: #26215f ;
+    cursor: pointer ;
+    font-family: arial ;
+    margin-bottom: 5px;
+    font-weight: bold ;
+    line-height: 40px;
+    text-align: center ;
+    background: #f8d885; /* Old browsers */
+background: -moz-linear-gradient(top,  #f8d885 0%, #f8d57b 10%, #f6cf72 18%, #f7c650 44%, #f5bf41 59%, #f6c141 62%, #f5bc37 74%, #f5bd36 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #f8d885 0%,#f8d57b 10%,#f6cf72 18%,#f7c650 44%,#f5bf41 59%,#f6c141 62%,#f5bc37 74%,#f5bd36 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #f8d885 0%,#f8d57b 10%,#f6cf72 18%,#f7c650 44%,#f5bf41 59%,#f6c141 62%,#f5bc37 74%,#f5bd36 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8d885', endColorstr='#f5bd36',GradientType=0 ); /* IE6-9 */
+
+}
+.full_sample{
+	background-color: #939598;
+	color: #fff ;
+    cursor: pointer ;
+    font-family: arial ;
+    
+    font-weight: 700 ;
+    text-align: center ;
+}
+.full_sample_mobile{
+    display: none;
+}
+
+@media (min-width: 1280px){
+
+.add_to_cart_form button{ 
+font-size: 1em;
+}
+}
+
+@media (min-width:320px) and (max-width: 480px){
+
+.full_sample_mobile{
+    display: block;
+}
+.full_sample_desktop{
+    display: none;
+}
+
+}
